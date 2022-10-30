@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Kutez Task</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <div class="app flex relative">
+        <div class="main-container items-start flex flex-col justify-evenly bg-white h-screen">
+            <div>
+                <h1 class="text-[43pt] font-bold text-[#2b2e39]">The Company</h1>
+            </div>
+            <div>                
+                <h2 class="md:text-[85pt] text-6xl  font-extrabold"> Shipping Time Calculator</h2>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between md:items-center items-start">
+                <div class="date w-1/3 p-6  ">
+                    <input
+                    class="border-2 w-48 h-12 p-6 rounded-full border-purple-700 bg-white flex justify-center focus-within:border-black"
+                    class="p-4"
+                    type="date" 
+                    name="dateInput" 
+                    id="dateInput" 
+                    placeholder="Order Date" 
+                    onfocus="(type='date')">
+                </div>
+               
+                <div class="select-container w-1/3 p-6 focus-within:border-black ">
+                    <select class="border-2 rounded-full  w-48   border-purple-700   h-12 bg-white flex justify-center focus-within:border-black"
+                    name="selectInput" id="selectInput" required>
+                      <option value="" disabled selected hidden>Fabric Type</option>
+                      <option value="Cotton" class="option">Cotton</option>
+                      <option value="Linen" class="option">Linen</option></select
+                    >
+                                 
+                </div>
+                <div  class="flex flex-row w-1/3 p-6  items-center" >
+
+                <div id="number-container" class="number-container focus-within:border-black  w-48 h-12 p-6 border-2 rounded-full border-purple-700  h-12 bg-white flex items-center justify-evenly">
+                    <input
+                    class="number-container w-48 "
+                      type="number"
+                      id="numberInput"
+                      name="numberInput"
+                      min="1"
+                      max="100"
+                      step="1"
+                      placeholder="Quantity"
+                      required
+                    />
+                    <i class="fa-solid fa-info w-max p-2" id="infoIcon"></i>
+                  </div>
+                  <div id="shippingInfo"  class="border-2 text-white  border-purple-600 mr-2">
+                    <p>Shipping <br> Dates May Vary <br> Based on Quantity!</p>
+                  </div>
+                </div>
+                
+            </div>
+            <div>
+                <button id="button" type="button"  class="btn bg-gradient-to-r from-[#AC6EFF] to-[#2414DB] w-[200px] h-16 text-white rounded-full">Calculate</button>
+            </div>
+            <div class="text-part">
+                <p id="text-info">
+                  Please enter your order information to estimate shipping date
+                </p>
+      
+                <h3 class="hidden font-light text-[27pt] text-[#2b2e39]" id="text-alt">
+                  Your Estimated Shipping Date is
+                  <span id="text-date" class="font-semibold text-[29pt]">26 September 2023</span>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="hidden bg-black bg-opacity-50 absolute top-0 left-0 w-full h-full justify-center items-center" id="alert">
+        <div class="modal-body p-4 border-2 md:rounded-full rounded-lg bg-gradient-to-r from-[#AC6EFF] to-[#2414DB] md:max-w-lg w-full flex justify-center items-center ">
+          <p class="text-2xl text-white">Please Fill All Information Correctly!</p>
+  
+          <i class="fa-solid fa-x p-4 hover:text-purple-600 text-white" id="closeAlert"></i>
+        </div> 
+      </div>
+    
+    <script src="script.js"></script>
+</body>
+</html7
